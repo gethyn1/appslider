@@ -19,6 +19,7 @@ App.Appslider = function(options) {
 
 
 	var _this = this,
+		initFlag = false,
 		viewport,
 		allSlides,
 		sliderWidth,
@@ -28,6 +29,8 @@ App.Appslider = function(options) {
 
 	
 	this.init = function() {
+
+		initFlag = true;
 
 		// Create the viewport
 		this.slider.wrap('<div class="as-viewport">');
@@ -220,5 +223,26 @@ App.Appslider = function(options) {
 			// Call after slide update callback
 			_this.afterSlideUpdate.call();
 		}, _this.slideDuration);
+	};
+
+	this.destroy = function() {
+		
+		if(initFlag) {
+			// Remove css
+			this.slider.unwrap();
+			this.slider.css({width: '', marginLeft: '', left: '', transform: ''});
+			this.slides.css({width: ''});
+
+			// Remove classes
+			this.slides.removeClass('as-slide as-active-slide');
+			this.slider.removeClass('as-slider');
+
+			// Delete clones
+			allSlides.filter('.as-slide-clone').remove();
+
+			// Remove event listeners
+			allSlides.off('click.appslider');
+			this.bulletNav.off('click.appslider');
+		}
 	};
 };
