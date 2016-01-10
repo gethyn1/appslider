@@ -1,0 +1,21 @@
+{
+  "name": "jsdev",
+  "version": "1.0.0",
+  "description": "Client side javascript module development setup",
+  "main": "",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Gethyn Jones <gethyn@gethynjonesdesign.co.uk>",
+  "license": "ISC",
+  "dependencies": {
+    "event-stream": "^3.3.1",
+    "gulp": "^3.8.11",
+    "gulp-autoprefixer": "^2.3.0",
+    "gulp-jshint": "^1.12.0",
+    "gulp-livereload": "^3.8.0",
+    "gulp-notify": "^2.2.0",
+    "gulp-sass": "^2.0.1",
+    "jshint-stylish": "^2.0.1"
+  }
+}

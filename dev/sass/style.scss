@@ -1,0 +1,48 @@
+/*
+	
+	App slider
+
+*/
+
+/*---- Core styles ----*/
+
+/* Viewport */
+.as-viewport {
+	overflow: hidden;
+}
+
+/* Slider */
+.as-slider {
+	position: relative;
+	display: flex;
+	flex-wrap: nowrap;
+	transition: transform .8s ease;
+
+	.no-flexbox & {
+		display: table;
+
+		/* Fixes image breaking out of container issue in FF */
+		table-layout: fixed;
+	}
+}
+
+/* Slides */
+.as-slide {
+	flex: 1;
+
+	/* Fixes images breaking container in FF Developer Edition */
+	min-width: 0;
+
+	/* Just in case its a list item */
+	list-style: none;
+
+	.no-flexbox & {
+		display: table-cell !important;
+		vertical-align: top;
+	}
+}
+
+/* Remove transition from slider */
+.as-no-transition {
+	transition: all 0s linear !important;
+}
